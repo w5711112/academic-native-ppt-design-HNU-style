@@ -80,7 +80,7 @@ status: formal_release
 >     - **左侧任何形状底部绝对不能超过 Y = 345.0 pt（最大可用高度仅 250 pt）**！严禁以“垂直充满”为由将左侧卡片向下强行拉伸到 350 pt 以下遮盖校徽印章！印章上方卡片平齐截断，下方右侧横贯落地承接；
 > 12. **全生命周期零中间文件即时清理机制 (Zero Intermediate Files & Cache Hygiene)**：
 >     - **绝不残留中间文件**：生成脚本、转换工具或测试验证过程中产生的任何 `__pycache__`、临时测试脚本、临时导出图像或调试 XML，必须在任务结束时被即时、彻底删除；
->     - 整个技能的 `examples/` 目录下仅保留唯一的最新权威 `.pptx` 范例（如 `投标文件--技术部分--湖大模板汇报.pptx`），绝不堆积冗余版本。
+>     - 整个技能的 `examples/` 目录下仅保留唯一的最新权威 `.pptx` 范例（如 `示例汇报--湖大模板汇报.pptx`），绝不堆积冗余版本。
 > 13. **同一页内正文字号协同收敛律 (Page-Level Font Size Harmonization，极差 ≤ 2.0 pt)**：
 >     - **严禁同一页内各卡片正文字号断崖割裂**！严禁出现一个卡片 19pt、另一个卡片 14pt 这种高达 5pt 的巨大悬殊；
 >     - **同一页内所有卡片正文字号的极差必须严格 ≤ 2.0 pt**（黄金区间收敛在 `14.5 ~ 16.0 pt`，极差推荐控制在 $\le 1.0\text{ pt}$ 甚至完全一致）；
@@ -104,9 +104,9 @@ status: formal_release
 > 18. **素材资产独立子目录强绑定与最小冗余隔离法则 (Strict Material-Asset Binding, Subdirectory Isolation & Minimum Redundancy Principle)**：
 >     - **专属子目录物理隔离 (Dedicated Subdirectory Isolation)**：
 >       - 严禁将任何图像、矢量图或工程图表平铺散落在 `assets/` 根目录下；
->       - 每一个演示文稿项目，必须根据其**素材标题或专题名称**，在 `assets/` 下建立独立的专用子目录（如 `assets/投标文件--技术部分/`）；
+>       - 每一个演示文稿项目，必须根据其**素材标题或专题名称**，在 `assets/` 下建立独立的专用子目录（如 `assets/示例汇报/`）；
 >     - **素材标题与元数据显式绑定 (Mandatory Title & Metadata Manifest)**：
->       - 每个项目专属资产子目录下必须包含一份 `README.md`，明确标明：① 项目完整标题（如《面向复杂场景的<YOUR_TOPIC>立体巡检系统》）、② 依托素材源文件（如《投标文件--技术部分.docx》）、③ 适用的 AI 模型归属（如 Gemini、Codex、Claude 或通用多模态模型）、④ 资产映射清册；
+>       - 每个项目专属资产子目录下必须包含一份 `README.md`，明确标明：① 项目完整标题（如《面向复杂场景的<YOUR_TOPIC>立体巡检系统》）、② 依托素材源文件（如《示例汇报.docx》）、③ 适用的 AI 模型归属（如 Gemini、Codex、Claude 或通用多模态模型）、④ 资产映射清册；
 >     - **最小必要原则 (Principle of Least Asset Redundancy)**：
 >       - 每次根据新素材或指派新 AI 模型创建 PPT 时，必须按需精准生成/提取资产，重置或新建专属资产子目录；
 >       - 专属目录内的资产总数必须严格等于该 PPT 实际引用的图表总数（$N_{\text{assets}} = N_{\text{deck\_needed}}$），**严禁留存任何孤立未引用的冗余文件或历史死图**；
@@ -298,7 +298,7 @@ status: formal_release
 
 ### 1. 核心底板与母版继承规范
 - **底板基准与共享素材**：
-  `templates/hnu_base_template.pptx`（源自 `D:\win-linux-share\AIM\PPT-skill\可变形飞行机器人_组会汇报_参考模板.pptx`，并在 `_ppt-shared-assets/` 保持同步）。
+  `templates/hnu_base_template.pptx`（源自 `D:/path/to/share\AIM\PPT-skill\可变形飞行机器人_组会汇报_参考模板.pptx`，并在 `_ppt-shared-assets/` 保持同步）。
 - **标准主色调（湖大红）**：
   **`#A6232B`**（**绝对记忆色号**，用于大标题、顶部 5pt 标志红线、核心状态标签与重点高亮）。
 - **第 1 页（封面页红色底框保护与单行大字号居中铁律）**：
@@ -381,7 +381,7 @@ status: formal_release
     - 学术汇报与技术文稿中**严禁出现第一/第二人称主语（如“我”、“你”、“他”、“我们”、“大家”）**（如严禁写“我希望减少反复拖动文本框的时间”）；
     - 一律改用客观、平实、目的导向的工程白描表达（如“**为了减少反复拖动文本框的时间**：……”、“**针对文献漏检痛点**：……”、“**为打通三端联动流程**：……”）；
   - **分点开头核心论点/动机强制加粗 (Bullet-Lead Bold Rule)**：
-    - **听众抓手原则**：分点开头必须将根本原因、痛点关键词或核心技术动作显式加粗（如 `**根本动机**：...`、`**手工排版瓶颈**：...`、`**断点回溯机制**：...`）；杜绝没有视觉重心的平淡平铺叙述，让观众一眼抓住核心信息！
+    - **听众方法原则**：分点开头必须将根本原因、痛点关键词或核心技术动作显式加粗（如 `**根本动机**：...`、`**手工排版瓶颈**：...`、`**断点回溯机制**：...`）；杜绝没有视觉重心的平淡平铺叙述，让观众一眼抓住核心信息！
   - **大厂黑话与伪架构虚词全面清洗 (Purge Big-Tech & Pseudo-Architecture Buzzwords)**：
     - 坚决杜绝“每个词都认识、连起来不知道在说什么”的互联网/大厂黑话与夸大叙述：
       - “壁垒” $\to$ 改为“难以直接通信的困难 / 阻碍”；
@@ -402,8 +402,8 @@ status: formal_release
     - PPT 中每一个文本框的内容都必须符合常用的科研与工程语境，杜绝生造词，让听众“一读就懂”；
   - **彻底去 AI 腔、说人话 (De-AI Tone & Plain Speech)**：
     - 坚决杜绝空洞的 AI 腔、套话、官话、客服式话术或机械喊口号；
-    - 严禁使用浮夸虚饰用语：如“在飞速发展的时代”、“具有划时代的里程碑意义”、“不仅……而且……”、“显著提升/显著优势”、“极大地赋能了”、“旨在打造……”等；
-    - 遇到“赋能”改“帮助/支持”；遇到“抓手”改“工具/方法”；遇到“链路”改“流程”；遇到“底层逻辑”改“原理”；遇到“痛点”改“实际问题”；
+    - 严禁使用浮夸虚饰用语：如“在飞速发展的时代”、“具有划时代的里程碑意义”、“不仅……而且……”、“显著提升/显著优势”、“极大地帮助了”、“旨在打造……”等；
+    - 遇到“帮助”改“帮助/支持”；遇到“方法”改“工具/方法”；遇到“链路”改“流程”；遇到“基本原理”改“原理”；遇到“痛点”改“实际问题”；
   - **客观事实与术语守恒 (Strict Factual Grounding)**：
     - 严禁为了“去 AI 味”而删减真实技术细节或篡改事实；
     - 领域专业术语（如 DeepSeek MLA、MoE、MTP、R1 CoT、GLM-4 AllTools、MiMo 2.6 Pro、MCP、Skill 等）必须精准保留；
@@ -504,10 +504,10 @@ status: formal_release
 
 ```bash
 # 1. 运行自动化构建引擎生成 PPTX
-python C:\Users\w5711112\.agents\skills\academic-native-ppt-design-HNU-style\scripts\hnu_template_engine.py --test
+python C:/path/to/skills/academic-native-ppt-design-HNU-style\scripts\hnu_template_engine.py --test
 
 # 2. 运行自动化质量门禁执行全量合规审查
-python C:\Users\w5711112\.agents\skills\academic-native-ppt-design-HNU-style\scripts\audit_hnu_deck.py --input <path_to_deck.pptx>
+python C:/path/to/skills/academic-native-ppt-design-HNU-style\scripts\audit_hnu_deck.py --input <path_to_deck.pptx>
 ```
 
 ### 自动化审查标准 (Quality Gates)

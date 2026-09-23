@@ -392,7 +392,7 @@ def audit_deck(pptx_path, asset_dir=None, skill_pages=None, json_report=None):
                                 })
 
                         # QG-39: 检查 renhua 违禁 AI 腔套话与标点 (R1/R7/R12)
-                        for bad_cliche in ['不仅如此', '显著提升', '显著提高', '全面赋能', '极大地赋能', '深度赋能', '划时代的', '具有重要意义', '毋庸置疑', '毫无疑问', '未来可期', '必将大放异彩', '旨在打造', '致力于打造', '作为 AI', '正如我们所见', '——']:
+                        for bad_cliche in ['不仅如此', '显著提升', '显著提高', '全面帮助', '极大地帮助', '深度帮助', '划时代的', '具有重要意义', '毋庸置疑', '毫无疑问', '未来可期', '必将大放异彩', '旨在打造', '致力于打造', '作为 AI', '正如我们所见', '——']:
                             if bad_cliche in t.text:
                                 issues.append({
                                     "slide": s_num, "code": "QG-39", "severity": "CRITICAL",
@@ -1127,7 +1127,7 @@ def audit_deck(pptx_path, asset_dir=None, skill_pages=None, json_report=None):
                     CLICHE_PATTERNS = [
                         (re.compile(r'不仅.*?而且'), "空洞连词 '不仅……而且……'"),
                         (re.compile(r'显著(提升|优势|增强|改善|提高|效果)'), "虚饰词 '显著...'"),
-                        (re.compile(r'极大地?赋能'), "AI腔 '赋能'"),
+                        (re.compile(r'极大地?帮助'), "AI腔 '帮助'"),
                         (re.compile(r'旨在打造'), "官话套话 '旨在打造'"),
                         (re.compile(r'飞速发展'), "空洞套话 '飞速发展'"),
                         (re.compile(r'里程碑意义|划时代'), "浮夸修饰 '里程碑/划时代'"),
@@ -1266,7 +1266,7 @@ def audit_deck(pptx_path, asset_dir=None, skill_pages=None, json_report=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='湖南大学学术 PPT 质量门禁审查脚本')
-    parser.add_argument('--input', default=r'C:\Users\w5711112\.agents\skills\academic-native-ppt-design-HNU-style\examples\投标文件--技术部分--湖大模板汇报.pptx')
+    parser.add_argument('--input', default=r'C:/path/to/skills/academic-native-ppt-design-HNU-style\examples\示例汇报--湖大模板汇报.pptx')
     parser.add_argument('--asset-dir', help='仅检查当前任务 assets/<项目>/ 目录')
     parser.add_argument('--skill-pages', help='JSON 对象：逻辑页码映射到该功能页 Skill 名称数组')
     parser.add_argument('--json-report', help='写出机器可读结果及必须人工检查的范围')

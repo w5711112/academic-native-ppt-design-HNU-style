@@ -1,10 +1,10 @@
 # Codex 78页学术 PPT 全量构建与重构总纲 (CODEX_HANDOFF v5.0 全量学术终极版)
 
 > **当前基准时间**：**2026年9月23日**  
-> **目标输出路径**：`D:\win-linux-share\整理skill\docs\AI科研流程-HNU规划-20260921\output\科研Agent与自定义Skills-HNU-77页.pptx` (全篇精准收敛至 **78 幻灯片**：77 页正文/结构页 + 1 页官方结语，允许在 75~85 页动态微调)  
+> **目标输出路径**：`D:/path/to/share\整理skill\docs\AI科研流程-HNU规划-20260921\output\科研Agent与自定义Skills-HNU-77页.pptx` (全篇精准收敛至 **78 幻灯片**：77 页正文/结构页 + 1 页官方结语，允许在 75~85 页动态微调)  
 > **验证基线**：已通过 41 项门禁自动化审计 (**0 Critical / 0 High**)  
 > **底层规范版本**：湖南大学专属学术风格 PPT 设计系统（`academic-native-ppt-design-HNU-style` v5.0）与简体中文人性化改写规范（`renhua` route-b-v3）  
-> **核心战略基石**：**全面继承 100页底座（`build_reconstructed.py`）的分体式卡片架构，深度落地 Rules 34~41 体系：学术零人称白描、要点加粗抓手、痛点动机先行、零 Markdown 字符泄漏、卡片物理边界强约束、防假性降级同页行距一致、同类 Skill 绝对连续、色彩调和、充实分点、交替强对比有机宽方差字阶梯队、行高齐平与大模型演进全景！**
+> **核心战略基石**：**全面继承 100页底座（`build_reconstructed.py`）的分体式卡片架构，深度落地 Rules 34~41 体系：学术零人称白描、要点加粗方法、痛点动机先行、零 Markdown 字符泄漏、卡片物理边界强约束、防假性降级同页行距一致、同类 Skill 绝对连续、色彩调和、充实分点、交替强对比有机宽方差字阶梯队、行高齐平与大模型演进全景！**
 
 ---
 
@@ -60,7 +60,7 @@
   - 学术汇报与技术文稿中**严禁出现第一/第二人称主语（如“我”、“你”、“他”、“我们”、“大家”）**（如严禁写“我希望减少反复拖动文本框的时间”）；
   - 一律改用客观、平实、目的导向的工程白描表达（如“**为了减少反复拖动文本框的时间**：……”、“**针对文献漏检实际问题**：……”、“**为打通三端联动流程**：……”）；
 - **分点开头核心论点/动机强制加粗 (Bullet-Lead Bold Rule)**：
-  - **听众抓手原则**：分点开头必须将根本原因、技术痛点或关键动作显式加粗（如 `**根本动机**：...`、`**手工排版瓶颈**：...`、`**断点回溯机制**：...`）；杜绝没有视觉重心的平淡平铺叙述，让观众一眼抓住核心信息！
+  - **听众方法原则**：分点开头必须将根本原因、技术痛点或关键动作显式加粗（如 `**根本动机**：...`、`**手工排版瓶颈**：...`、`**断点回溯机制**：...`）；杜绝没有视觉重心的平淡平铺叙述，让观众一眼抓住核心信息！
 - **大厂黑话与伪架构套话清洗对照表 (Buzzwords Purge Invariant)**：
   - 必须能读懂！杜绝夸大描述与晦涩词汇堆砌，严格执行如下替换：
     | 禁用词 / 伪架构套话 | 严禁原因 | 规范学术与工程白描替换 |
@@ -76,7 +76,7 @@
     | **具有划时代/里程碑意义** | 浮夸修饰 | **直接删除，用具体评测指标与性能对比说话** |
     | **不仅……而且……** | 空洞连词 | **拆分为两个独立客观的技术事实分句** |
     | **显著提升 / 显著优势** | 虚饰主观词 | **用具体数字、收敛轮数或真实实验对比呈现** |
-    | **极大地赋能** | AI客服腔 | **支持 / 辅助 / 帮助 / 加速** |
+    | **极大地帮助** | AI客服腔 | **支持 / 辅助 / 帮助 / 加速** |
 - **客观事实与术语守恒 (Strict Factual Grounding)**：
   - 严禁为了“去 AI 味”而删减真实技术细节或篡改事实；
   - 领域专业术语（如 DeepSeek MLA、MoE、MTP、R1 CoT、GLM-4 AllTools、MiMo 2.6 Pro、MCP、Skill 等）必须精准保留；
@@ -98,7 +98,7 @@
 - **零 Markdown 符号泄漏 (Zero-Markdown-Leak Invariant)**：
   - 彻底杜绝在 PPTX 字符串或分点中直接拼接输出 Markdown 语法标记字符（如 `**加粗**`、`__强调__`、`## 标题`、`` `代码` ``）；
   - PPTX 不是浏览器或 Markdown 解析器，DrawingML 的 `<a:t>` 文本标签会将 `**` 视为普通可见字符原样打印在幻灯片上（如 Slide 9 曾出现 `”**外部工具连接**“` 的重大缺陷，严重损害学术汇报的严肃性与专业度，属于严厉禁止的大忌）；
-- **原生 OpenXML Run 样式赋能 (Native DrawingML Run Bolding)**：
+- **原生 OpenXML Run 样式帮助 (Native DrawingML Run Bolding)**：
   - 所有分点要点加粗，必须在 Python-pptx / OpenXML 中通过独立的 text run 与 `run.font.bold = True` 原生渲染；
   - 文本流必须在写入 PPT 前经过强制清洗（如 `re.sub(r'\*\*([^*]+)\*\*', r'\1', text).replace('**', '').replace('__', '')`），确保流入 `<a:t>` 的字符 100% 洁净。
 
@@ -131,13 +131,13 @@ Codex 执行时聚焦以下核心文件：
 
 | 序号 | 资产类别 | 绝对路径 | 核心作用说明 |
 | :---: | :--- | :--- | :--- |
-| **1** | **执行总纲** (必读) | `D:\win-linux-share\整理skill\docs\AI科研流程-HNU规划-20260921\CODEX_HANDOFF.md` | **本指南 (v5.0 全量学术终极版)**，定义全域规范、痛点动机、版型代码、大纲映射与验证指令。 |
-| **2** | **全量生成代码** (唯一工作台) | `D:\win-linux-share\整理skill\docs\AI科研流程-HNU规划-20260921\.skill-contract\rebuild-v4\build_77page_deck.py` | **包含前 12 页高精校准与 78 页流水线的生成脚本**，包含 `fixed_card`、`merged_matrix`、`open_source_model_page` 等成熟函数。 |
-| **3** | **100页成熟母本** (完整参考) | `D:\win-linux-share\整理skill\docs\AI科研流程-HNU规划-20260921\.skill-contract\rebuild-v4\build_reconstructed.py` | 100 页成熟版本的完整内容、分体架构与原始文字底本。 |
-| **4** | **内容交接文档** (语义依据) | `D:\win-linux-share\整理skill\docs\AI科研流程-HNU规划-20260921\当前PPT构建思路与完整内容交接.md` | 全书 5 大篇章递进脉络、原始分点与真实技术论据。 |
-| **5** | **模板底板** (母版) | `C:\Users\w5711112\.agents\skills\academic-native-ppt-design-HNU-style\templates\hnu_base_template.pptx` | 官方母版，尤其参考第 21 页。 |
-| **6** | **门禁审计器** (验收) | `C:\Users\w5711112\.agents\skills\academic-native-ppt-design-HNU-style\scripts\audit_hnu_deck.py` | 运行检测 40 项门禁（包含 QG-34~QG-40 自动化检测）。 |
-| **7** | **真实素材图库** (装配) | • `D:\win-linux-share\AIM\大家的PPT\组会PPT素材\` (35张主素材 + Benchmark + `展示自动维护整个体系.png`)<br>• `C:\Users\w5711112\Documents\PPT-paper-reference-figure\paper-reference-figure\` (3张学术基准图) | **39 张真实图源**，100% 完整收录，严禁裁切，单张复用不超过 2 次。<br>★ **特别提醒**：`D:\win-linux-share\AIM\大家的PPT\组会PPT素材\展示自动维护整个体系.png` (1132x850) 必须装配在 **Slide 71: 【skill-ecosystem-governor：维护来源与链接】**，采用大图展台与底部双卡片协同！ |
+| **1** | **执行总纲** (必读) | `D:/path/to/share\整理skill\docs\AI科研流程-HNU规划-20260921\CODEX_HANDOFF.md` | **本指南 (v5.0 全量学术终极版)**，定义全域规范、痛点动机、版型代码、大纲映射与验证指令。 |
+| **2** | **全量生成代码** (唯一工作台) | `D:/path/to/share\整理skill\docs\AI科研流程-HNU规划-20260921\.skill-contract\rebuild-v4\build_77page_deck.py` | **包含前 12 页高精校准与 78 页流水线的生成脚本**，包含 `fixed_card`、`merged_matrix`、`open_source_model_page` 等成熟函数。 |
+| **3** | **100页成熟母本** (完整参考) | `D:/path/to/share\整理skill\docs\AI科研流程-HNU规划-20260921\.skill-contract\rebuild-v4\build_reconstructed.py` | 100 页成熟版本的完整内容、分体架构与原始文字底本。 |
+| **4** | **内容交接文档** (语义依据) | `D:/path/to/share\整理skill\docs\AI科研流程-HNU规划-20260921\当前PPT构建思路与完整内容交接.md` | 全书 5 大篇章递进脉络、原始分点与真实技术论据。 |
+| **5** | **模板底板** (母版) | `C:/path/to/skills/academic-native-ppt-design-HNU-style\templates\hnu_base_template.pptx` | 官方母版，尤其参考第 21 页。 |
+| **6** | **门禁审计器** (验收) | `C:/path/to/skills/academic-native-ppt-design-HNU-style\scripts\audit_hnu_deck.py` | 运行检测 40 项门禁（包含 QG-34~QG-40 自动化检测）。 |
+| **7** | **真实素材图库** (装配) | • `D:/path/to/slide-assets\` (35张主素材 + Benchmark + `展示自动维护整个体系.png`)<br>• `C:/path/to/paper-reference-figure\` (3张学术基准图) | **39 张真实图源**，100% 完整收录，严禁裁切，单张复用不超过 2 次。<br>★ **特别提醒**：`D:/path/to/slide-assets\展示自动维护整个体系.png` (1132x850) 必须装配在 **Slide 71: 【skill-ecosystem-governor：维护来源与链接】**，采用大图展台与底部双卡片协同！ |
 
 ---
 
@@ -409,20 +409,20 @@ def image_page(slide, item: dict) -> None:
 
 ```markdown
 请直接阅读并严格遵循以下两份规范文件：
-1. `D:\win-linux-share\整理skill\docs\AI科研流程-HNU规划-20260921\CODEX_HANDOFF.md` (v5.0 全量学术终极版)
-2. `C:\Users\w5711112\.agents\skills\academic-native-ppt-design-HNU-style\SKILL.md` (v5.0，重点遵循 Rules 34~40 / QG-34~QG-40)
+1. `D:/path/to/share\整理skill\docs\AI科研流程-HNU规划-20260921\CODEX_HANDOFF.md` (v5.0 全量学术终极版)
+2. `C:/path/to/skills/academic-native-ppt-design-HNU-style\SKILL.md` (v5.0，重点遵循 Rules 34~40 / QG-34~QG-40)
 
 【任务目标】
 请以已经通过质量验证的生成脚本：
-`D:\win-linux-share\整理skill\docs\AI科研流程-HNU规划-20260921\.skill-contract\rebuild-v4\build_77page_deck.py`
+`D:/path/to/share\整理skill\docs\AI科研流程-HNU规划-20260921\.skill-contract\rebuild-v4\build_77page_deck.py`
 为唯一起点，完整构建并输出全篇 **78 幻灯片**（77 页正文/结构页 + 1 结语页）学术 PPT，并保存至：
-`D:\win-linux-share\整理skill\docs\AI科研流程-HNU规划-20260921\output\科研Agent与自定义Skills-HNU-77页.pptx`。
+`D:/path/to/share\整理skill\docs\AI科研流程-HNU规划-20260921\output\科研Agent与自定义Skills-HNU-77页.pptx`。
 
 【核心质量铁律清单 (必须 100% 达成)】
 1. **renhua 人性化语言风格与学术零人称 (Rule 39 / QG-39 - 重中之重)**：
    - **学术叙述零人称**：正文中坚决杜绝出现第一/第二人称主语（“我”、“你”、“他”、“我们”、“大家”），一律改为客观目的句（如“为了减少反复拖动文本框的时间：……”、“针对文献漏检实际问题：……”）；
    - **大厂黑话与伪架构套话彻底清洗**：坚决禁止“壁垒”、“可复用资产”、“原子化”、“沉淀为...”、“高频科研方法”、“标准化通信与状态感知”、“自愈闭环”等晦涩夸大词汇，严格执行白描替换（详见总纲对照表）；
-   - **分点开头要点强制加粗 (Bullet-Lead Bold)**：每个分点开头必须显式加粗核心论点或根本动作（格式为 `**核心动机/要点**：...`），突出听众抓手；
+   - **分点开头要点强制加粗 (Bullet-Lead Bold)**：每个分点开头必须显式加粗核心论点或根本动作（格式为 `**核心动机/要点**：...`），突出听众方法；
    - **标点洁净**：严禁破折号（——）与分号（；），不留孤立断字，中英文保留空格。
 2. **Skill 叙事逻辑、痛点先行与大纲聚合 (Rule 40 / QG-40)**：
    - **痛点与动机先行**：每个 Skill 必须先讲透“为什么做/解决什么痛点”（参考总纲第一节动机对齐表），绝不能一上来就悬空讲构建；
@@ -440,9 +440,9 @@ def image_page(slide, item: dict) -> None:
    - 严格落实 Slides 5、6、7 三页纵深架构，全面覆盖 DeepSeek (V2~V4.1)、GLM (4~5.3)、OpenAI GPT (4~GPT-6 Astra)、Google Gemini (1.5~3.8 Flash)、小米 MiMo (v2~v2.6 Pro) 等主流谱系与选型防线。
 6. **素材零裁切与新增图像实装 (Zero-Crop Invariant, QG-29)**：
    - 全部 39 张图源必须使用 `crop=None`，以 `contain` 完整等比呈现；
-   - **特别提醒**：用户新增图片素材 `D:\win-linux-share\AIM\大家的PPT\组会PPT素材\展示自动维护整个体系.png` (1132x850) **必须在第 71 页【skill-ecosystem-governor：维护来源与链接】实装**，采用大图展台并在底部配备 2 张各 2 分点的支撑卡片，严禁遗漏！
+   - **特别提醒**：用户新增图片素材 `D:/path/to/slide-assets\展示自动维护整个体系.png` (1132x850) **必须在第 71 页【skill-ecosystem-governor：维护来源与链接】实装**，采用大图展台并在底部配备 2 张各 2 分点的支撑卡片，严禁遗漏！
 7. **全自动化门禁验收**：
    生成完成后，运行底层 OpenXML 审计脚本：
-   `python C:\Users\w5711112\.agents\skills\academic-native-ppt-design-HNU-style\scripts\audit_hnu_deck.py --input "D:\win-linux-share\整理skill\docs\AI科研流程-HNU规划-20260921\output\科研Agent与自定义Skills-HNU-77页.pptx"`
+   `python C:/path/to/skills/academic-native-ppt-design-HNU-style\scripts\audit_hnu_deck.py --input "D:/path/to/share\整理skill\docs\AI科研流程-HNU规划-20260921\output\科研Agent与自定义Skills-HNU-77页.pptx"`
    必须达成 `0 Critical / 0 High` 门禁完全通过！
 ```
