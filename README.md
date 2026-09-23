@@ -98,7 +98,7 @@ git clone https://github.com/w5711112/academic-native-ppt-design-HNU-style.git
 在 **Codex、Claude Code、Kimi Code、MiMo Desktop** 等宿主中，提到「湖大 PPT / HNU PPT / 湖南大学模板」即可触发。生成后执行：
 
 ```powershell
-python scripts\audit_hnu_deck.py --input <你的.pptx>
+python scripts\audit_hnu_deck.py --input <path_to_deck.pptx>
 ```
 
 依赖以 `scripts/` 说明为准（通常需要 **python-pptx**）。
