@@ -103,6 +103,31 @@ python scripts\audit_hnu_deck.py --input <path_to_deck.pptx>
 
 依赖以 `scripts/` 说明为准（通常需要 **python-pptx**）。
 
+
+---
+
+## 使用方式：怎样才有好效果
+
+这个 Skill 的定位是**排版与学术展示**，不是从零编造答辩内容。
+
+**需要准备的输入**
+
+1. **一定量的文字材料**  
+   讲稿、提纲、章节要点、结论与依据等。文字给得越完整，标题、分点和页面结构越有东西可排。
+2. **尽量多的相关图片**  
+   实拍、截图、实验图、示意图、图表等。图越全，大图页、图文混排和说明文字越有内容，版面也更饱满。
+3. **模板与场合**  
+   湖大风格母版、印章区域已内置；按组会 / 答辩 / 工程汇报选择信息密度与字阶档位即可。
+
+**会得到什么**
+
+- 基于湖南大学风格模板的学术 PPT 排版结果；
+- **纯原生可编辑** `.pptx`（文本框、形状、表格可继续改）；
+- 字阶、行距、印章避让等按规则自动套用，并可用 `audit_hnu_deck.py` 做门禁检查。
+
+**和「一句话出成品」的区别**  
+只给一句提示词、不给正文和图，没有材料可排，效果必然空。**先给足文字和图片，再交给排版规则生成可编辑 PPT**，这是预期用法。
+
 ---
 
 ## 使用边界
@@ -126,3 +151,4 @@ python scripts\audit_hnu_deck.py --input <path_to_deck.pptx>
 **academic-native-ppt-design-HNU-style** is a PPT skill built on the Hunan University visual template for **academic** talks and structured engineering briefings. Output is **native editable** `.pptx` (DrawingML text, shapes, tables). Layout archetypes, dual-mode type scales, seal keep-out zones, and `audit_hnu_deck.py` gates are applied automatically.
 
 Companion of [Unified-Scholarflow-Skills](https://github.com/w5711112/Unified-Scholarflow-Skills).
+
